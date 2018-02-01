@@ -26,7 +26,7 @@ class Model:
             y_pred = tf.nn.softmax(tf.matmul(self.x, W) + b, axis=1)
 
             # Compute loss, divinding by 2 just for loss gradient computation
-            self.loss = tf.reduce_mean( tf.reduce_sum(- tf.one_hot(self.y, 2) * tf.log(y_pred), axis=1))
+            self.loss = tf.reduce_mean( tf.reduce_sum(- tf.one_hot(self.y, num_classes) * tf.log(y_pred), axis=1))
 
         self.optimiser = tf.train.GradientDescentOptimizer(0.01).minimize(self.loss)
 
