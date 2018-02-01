@@ -4,6 +4,7 @@ import numpy as np
 class Model:
   def create_model(self, feature_dim):
     self.feature_dim = feature_dim
+
     # batch x features
     self.x = tf.placeholder(tf.float32, shape=[None, feature_dim], name="X")
     self.y = tf.placeholder(tf.float32, shape=[None, 1], name="Y")
